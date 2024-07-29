@@ -68,6 +68,7 @@
 
 	<ItemGroup>
 		<AdditionalFiles Include="Resources\Locales\*.json" />
+		<EmbeddedResource Include="Resources\Locales\*.json" />
 	</ItemGroup>
 
 	<ItemGroup>
