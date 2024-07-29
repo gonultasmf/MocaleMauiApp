@@ -1,4 +1,6 @@
-﻿using Mocale.Abstractions;
+﻿using Mocale;
+using Mocale.Abstractions;
+using Mocale.Extensions;
 using System.Globalization;
 
 namespace Project2;
@@ -24,7 +26,7 @@ public partial class MainPage(ILocalizationManager localizationManager, ITransla
                         .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
 
                         new Label()
-                        .Text(translatorManager.Translate("LocalizationCurrentProviderIs"))
+                        .Text(e => e.Path("[LocalizationCurrentProviderIs]").Source(MocaleLocator.TranslatorManager).BindingMode(BindingMode.OneWay))
                         .FontSize(18)
                         .CenterHorizontal()
                         .SemanticDescription("Welcome to dot net Multi platform App U I")
